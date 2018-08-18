@@ -1,0 +1,170 @@
+.shadow{
+    /*-webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);*/
+    margin: 0 0 10px;
+    border: 0;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.all-action{
+    margin-top: 10px;
+   
+}
+.action-select{
+   /* -webkit-box-shadow: 0 0px 2px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 0px 2px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);*/
+}
+select:focus {
+    border-color: #ff0000 !important;
+}
+select:focus {
+    border: 1px solid #ff0000 !important;
+    box-shadow: 0 0 3px #ff0000 !important;
+    -moz-box-shadow: 0 0 3px #ff0000 !important;
+    -webkit-box-shadow: 0 0 3px #ff0000 !important;
+    }
+    
+    select:focus{
+    outline-offset: 0px !important;
+    outline: none !important;
+    }
+#custom-search-input {
+    margin:0;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color:#D9230F;
+}
+
+.search-query:focus + button {
+    z-index: 3;   
+}
+/*
+.yt-uix-form-input-radio-container input, .yt-uix-form-input-checkbox-container input {
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+.yt-uix-form-input-checkbox, .yt-uix-form-input-checkbox-element {
+    width: 14px;
+    height: 14px;
+}
+.yt-uix-form-input-radio-element, .yt-uix-form-input-checkbox-element {
+    border: 1px solid #c6c6c6;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.yt-uix-form-input-checkbox input[type=checkbox]:checked+span:after {
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    content: "\e013 ";
+}*/
+
+.checkbox-bootstrap input[type=checkbox] {
+    display: none;
+    margin-bottom: -12px;
+}
+.checkbox-bootstrap span {
+    background: #fff;
+    display: inline-flex;
+    content: " ";
+    width: 18px;
+    height: 18px;
+    line-height: 11px;
+    font-size: 11px;
+    padding: 2px;
+    color: #555;
+    border: 1px solid #CCC;
+    transition: box-shadow .2s linear,border-color .2s linear;
+    cursor: pointer;
+    margin: auto;
+}
+.checkbox-glyphicons input[type=checkbox]:checked+span:after {
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    content: "\e013 ";
+}
+
+.btn-group-xs>.btn, .btn-xs {
+    padding: 1px 10px;
+}
+.btn-success {
+    color: #fff;
+    background-color: #31bd31;
+    border-color: #4cae4c;
+}
+.btn-info {
+    color: #fff;
+    background-color: #ac30ef;
+    border-color: #ac30ef;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #fb2030;
+    border-color: #fb2030;
+}
+
+
+
+/*******************/
+
+/*******************/
+/* Small devices (landscape phones, 576px and up)*/
+@media screen and (max-width: 576px) and (min-width: 1px) {
+    
+    label {
+        margin-bottom: 0px;
+    }
+    select{
+        width: 100%;
+    }
+  
+  }
+  
+  /* Medium devices (tablets, 768px and up)*/
+  @media screen and (max-width: 1024px) and (min-width: 577px) {
+    
+    label {
+        margin-bottom: 0px;
+    }
+    select{
+        width: 100%;
+    }
+  }

@@ -1,0 +1,33 @@
+<div class="mid-content">
+    <a class="btn icon-btn btn-sm btn-back"  [routerLink]="['/dashboard/playlist']">
+            <span class="glyphicon btn-glyphicon glyphicon-arrow-left img-circle text-back"></span>
+            Back
+        </a>
+  <div class="block">
+      <div class="row">
+          
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 margintop" *ngFor="let video of videos">	
+              <div class="overlay">
+                  <a [routerLink]="['/dashboard/video-manager/view']" href="javascript:void(0)"><img class="img-fluid thumbnail" src="http://img.youtube.com/vi/{{ video.video_id }}/0.jpg"></a>
+                  <span class="overtitle">{{ video.video_title }}</span>
+                  <span class="overlikes"><a class="btn icon-btn btn-sm btn-pink pull-right">
+                      <span class="glyphicon btn-glyphicon glyphicon-heart img-circle text-pink"></span>
+                      {{video.video_likes}}
+                    </a>
+                  </span>
+                  <span class="overviews"> <a class="btn icon-btn btn-sm btn-prpl">
+                      <span class="glyphicon btn-glyphicon glyphicon-eye-open img-circle text-prpl"></span>
+                      {{video.video_views}}
+                    </a>
+                  </span>
+                  <!--<span class="time">{{ video.video_duration }}</span>-->
+                  <a [routerLink]="['/dashboard/video-manager/view']" href="javascript:void(0)" class="playWrapper"></a>
+              </div>
+          </div>
+          
+      </div>
+      
+
+
+  </div>
+</div>

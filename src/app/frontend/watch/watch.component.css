@@ -1,0 +1,66 @@
+
+/**********todta*****************/
+.video-footer{
+
+}
+.video-action{
+	color: #B3AFAF;
+	cursor: pointer;
+}
+.video-action i{
+	margin-left:20px;
+}
+.liked{
+	color: #E91E63;
+}
+.disliked{
+	color: #B3AFAF;
+}
+.disliked:hover{
+	color: #E91E63;
+}
+.watch-later{
+	color: #F44336;
+	font-size: 30px;
+}
+.no-watch-later{
+	color: #B3AFAF;
+	/*font-size: 30px;*/
+}
+.no-watch-later:hover{
+	color: #F44336;
+}
+
+.profle-img-circle{
+    height: 45px;
+    width: 45px;
+    padding: 1px;
+}
+.subscribe-btn{
+	background-color: #f00000;
+    color: #fff;
+    padding: 7px 10px;
+    font-weight: 550;
+    border-radius: 2px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.subscribe-btn span{
+	padding-left: 10px;
+    font-weight: 500;
+    color: #fffcfc;
+}
+.subscribed-btn{
+	background-color: #cac7c7;
+    color: #ffffff;
+    padding: 7px 10px;
+    font-weight: 550;
+    border-radius: 2px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.subscribed-btn span{
+	padding-left: 10px;
+    font-weight: 500;
+    color: #fffcfc;
+}

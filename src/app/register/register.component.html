@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card card-container">
+      <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+      <img id="profile-img" class="profile-img-card" src="assets/img/play.png" />
+      <p id="profile-name" class="profile-name-card"></p>
+      <form class="form-signin"  [formGroup]="regForm" (ngSubmit)="onSubmit()">
+          <span id="reauth-email" class="reauth-email"></span>
+          <input formControlName="name" type="text" id="inputName" class="form-control" placeholder="Name" required >
+          <input formControlName="username" type="email" id="inputEmail" class="form-control" placeholder="Email address" required >
+          <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          
+          <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign up</button>
+      </form><!-- /form -->
+      <a [routerLink]="['/login']" class="footer-link">
+          Already have an account? Sign in here
+      </a>
+  </div><!-- /card-container -->
+</div><!-- /container -->

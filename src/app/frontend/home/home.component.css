@@ -1,0 +1,13 @@
+
+
+/******my styles*********/
+
+
+/************sidebar*************/
+
+/******************mid css start*********************/
+
+.card {
+    -ms-flex-direction: column;
+    flex-direction: column;
+}

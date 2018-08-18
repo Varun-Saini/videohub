@@ -1,0 +1,59 @@
+
+<div class="mid-content">
+  <div class="row">	
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-12">	
+      <div (click)="watchavideo()" style="width:100%;height:100%;min-height: 400px; float: none; clear: both; margin: 2px auto;    border: 1px solid #f1f0f0;">
+        <div *ngIf="preview" [innerHTML]="preview_vid"></div>
+        <div *ngIf="!preview" class="spinner-loading" >
+          <embed [src]="ulr | safe" wmode="transparent" type="application/x-shockwave-flash" width="100%" height="100%" allowfullscreen="true" style="width:100%;height:100%;min-height: 400px;">
+        </div>
+      </div>
+      <div ></div>
+      <div class="video-footer">
+        <h4 class="truncatedText">{{watching_video.channel_name}}</h4>
+        <div class="thumb-footer-color">
+          <span>{{watching_video.video_views | sorthandNumber}} views</span>
+          <span>{{watching_video.created_on | timeAgo}}</span>
+          <span class="video-action pull-right">
+            <i class="fa fa-heart fa-2x "  [ngClass]="{'liked':liked===true}" aria-hidden="true" (click)="likevideo()"> {{watching_video.video_likes | sorthandNumber}}</i>
+            <i class="fa fa-clock-o fa-2x no-watch-later" aria-hidden="true"></i>
+          </span>
+        </div>
+        <hr />
+      </div>
+      <div class="channel-details">
+        <div class="">
+          <a href="#" id="user-profile">
+            <img class="img-responsive img-thumbnail img-circle profle-img-circle" src="assets/img/profile2.jpg">
+            <strong>@channelname</strong>
+          </a>
+          <a class="subscribe-btn pull-right">SUBSCRIBED
+            <span>32K</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12" *ngFor="let video of videos">	
+      <div class="card" *ngIf="videoid != video.row_id">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="padding: 0;">
+            <div class="overlay">
+              <a (click)="watchanothervideo(video.row_id)" href="javascript:void(0)"><img class="img-fluid thumbnail" src="http://img.youtube.com/vi/{{ video.video_id }}/0.jpg"></a>
+              <span class="time">{{ video.video_duration }}</span>
+              <a (click)="watchanothervideo(video.row_id)" href="javascript:void(0)" class="playWrapper"></a>
+            </div>
+          </div>
+          <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7" style="padding: 0;">
+            <div class="card-body secondbase">
+              <h4 class="card-title truncatedText">{{ video.video_title }}</h4>
+              <p class="card-text"><a href="#" class="text-danger truncatedText"><b>{{ video.channel_name }}</b></a></p>
+              <div class="d-flex thumb-footer-color">
+                <span><i class="fa fa-eye" aria-hidden="true"></i> {{ video.video_views | sorthandNumber }}</span>
+                <span> &nbsp;&nbsp;&nbsp;&nbsp; {{video.created_on | timeAgo}}</span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<div class="mid-content">
+    <a class="btn icon-btn btn-sm btn-back"  [routerLink]="['/dashboard/video-manager']">
+            <span class="glyphicon btn-glyphicon glyphicon-arrow-left img-circle text-back"></span>
+            Back
+        </a>
+  <div class="block">
+      <div class="content-left ">
+          <h4>Video Details </h4>
+      </div>
+      <div class="clearfix"></div>
+      <hr />
+
+      <div class="row">
+        <div class="col-sm-12">
+            <form class="form-horizontal"  role="form">
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Video Status</label>
+                    <div class="col-sm-3">
+                        <div class="switch-section">
+                            Un-publish<label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" checked>
+                            <span class="custom-control-indicator"></span>
+                            </label> Publish
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="switch-section">
+                            Private<label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" checked>
+                            <span class="custom-control-indicator"></span>
+                            </label> Public
+                        </div>    
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <label for="channel" class="col-sm-3 control-label">Channel</label>
+                    <div class="col-sm-6">
+                        <select id="channel" class="form-control" >
+                            <option value="Channel">Channel</option>
+                            <option value="Channel">Channel</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3"><a hre="#" title="Create New Channel"> Create New Channel?</a></div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Video Title</label>
+                    <div class="col-sm-6">
+                        <input type="text" id="video_title" class="form-control" placeholder="Video Title"  />
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div> 
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Youtube Video ID</label>
+                    <div class="col-sm-6">
+                        <input type="text" id="video_id" class="form-control" placeholder="Youtube Video ID"  />
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Video Duration</label>
+                    <div class="col-sm-6">
+                        <input type="text" id="video_duration" class="form-control" placeholder="Video Duration HH:MM:SS"  />
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Video Meta</label>
+                    <div class="col-sm-6">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="comma seprated tag,since this is important for search result"></textarea>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Video Description</label>
+                    <div class="col-sm-6">
+                            <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" placeholder="Video Description within 1000 words"></textarea>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label"></label>
+                    <div class="col-sm-3">
+                            <a [routerLink]="['/dashboard/video-manager']" type="button" class="btn btn-outline-danger btn-block btn-sm">Cancel Video</a>  
+                    </div>
+                    <div class="col-sm-3">
+                            <button type="button" class="btn btn-outline-success btn-block btn-sm">Save Video</button>      
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                    
+                             
+            </form>    
+        </div>
+      </div>
+  </div>
+</div>

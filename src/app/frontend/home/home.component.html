@@ -1,0 +1,50 @@
+<div class="mid-content">
+  <div class="grid-subheader"><h2>Latest</h2></div>	
+  <div class="row">
+      <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-6" *ngFor="let video of videos">
+          <div class="card">
+              <div class="overlay">
+                  <a [routerLink]="['/watch', video.row_id]"><img class="img-fluid thumbnail" src="http://img.youtube.com/vi/{{ video.video_id }}/0.jpg"></a>
+                  <span class="time">{{ video.video_duration }}</span>
+                  <a [routerLink]="['/watch', video.row_id]" class="playWrapper"></a>
+              </div>
+              <div class="card-body secondbase">
+                  <h4 class="card-title truncatedText">{{ video.video_title }}</h4>
+                  <p class="card-text"><a href="#" class="text-danger truncatedText"><b>{{ video.channel_name | uppercase }}</b></a></p>
+                      <div class="d-flex thumb-footer-color">
+                          <span><i class="fa fa-eye" aria-hidden="true"></i> {{ video.video_views | sorthandNumber }}</span>
+                          <span class="pull-right">{{video.created_on | timeAgo}}</span>
+                      </div>
+              </div>
+          </div>
+      </div>
+      
+      
+  </div>
+  <div class="grid-subfooter"><a href="#" class="pull-right">more..</a></div>
+
+
+  <div class="grid-subheader"><h2>Trending</h2></div>	
+  <div class="row">
+      <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-6" *ngFor="let video of videos">
+          <div class="card">
+              <div class="overlay">
+                  <a href="#"><img class="img-fluid thumbnail" src="http://img.youtube.com/vi/{{ video.video_id }}/0.jpg"></a>
+                  <span class="time">{{ video.video_duration }}</span>
+                  <a href="#" class="playWrapper"></a>
+              </div>
+              <div class="card-body secondbase">
+                  <h4 class="card-title truncatedText">{{ video.video_title }}</h4>
+                  <p class="card-text"><a href="#" class="text-danger truncatedText"><b>{{ video.channel_name | uppercase }}</b></a></p>
+                      <div class="d-flex thumb-footer-color">
+                          <span>{{ video.video_views }} <i class="fa fa-eye" aria-hidden="true"></i></span>
+                          <span class="pull-right">{{video.created_on | timeAgo}}</span>
+                      </div>
+              </div>
+          </div>
+      </div>
+      
+      
+  </div>
+  <div class="grid-subfooter"><a href="#" class="pull-right">more..</a></div>
+</div>

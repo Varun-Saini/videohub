@@ -1,0 +1,63 @@
+<!--The content below is only a placeholder and can be replaced.navbar-fixed-top navbar-fixed-top-->
+<div id="navbar-wrapper">
+    <div class="animated yt-loader" *ngIf="loadingRouteConfig"></div>
+  <header>
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container-fluid">
+              
+              <div class="navbar-header">
+                    <button (click)="toggleSearch(e)" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+                    </button>
+                  <a class="navbar-brand" href="javascript:void(0)">
+                    <span class="menu-icon" (click)="toggleAside(e)"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                    <span class="logo-span"><img class="mine-logo" src="assets/img/minetube-logo.png"></span>
+                  </a>
+                  
+              </div>
+                
+              <div id="navbar-collapse" class="navbar-collapse" [ngClass]="{'collapse':collapse===true}">
+                  <form class="navbar-form navbar-left" role="search" [action]="['/results']">
+                      <div class="input-group"  style="width: 100%;">
+                          <input type="text" class="form-control" placeholder="Search" autofocus tabindex="0">
+                          <span class="input-group-btn">
+                              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                          </span>
+                      </div>
+                  </form>
+                  <ul class="nav navbar-nav navbar-right" >
+                      <li><a [routerLink]="['/dashboard']" title="Dashboard"><i class="fa fa-th-large fa-18px" aria-hidden="true"></i></a></li>
+                      <li><a [routerLink]="['/dashboard/video-manager']" title="Upload video"><i class="fa fa-upload fa-18px" aria-hidden="true"></i></a></li>
+                      <li><a href="javascript:void(0)" title="Notification"><i class="fa fa-bell-o fa-18px" aria-hidden="true"></i>
+                        <span class="badge">4</span></a>
+                      </li>
+                      
+                      <li class="dropdown hide-responsive" [ngClass]="{'open':show===true}" (click)="toggleCollapse(e)" >
+                          <a id="user-profile" href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                              <img src="assets/img/profile2.jpg" class="img-responsive img-thumbnail img-circle">
+                           </a>
+                          <ul class="dropdown-menu dropdown-block" role="menu">
+                              <li><a href="#">Profil</a></li>
+                              <li><a href="javascript:void(0)" (click)="logout(e)">Logout</a></li>
+                          </ul>
+                      </li>
+                      <li class="hide-comp"><a [routerLink]="['/dashboard']" title="Profile"><i class="fa fa-user-circle-o fa-18px" aria-hidden="true"></i></a></li>
+                      <li class="hide-comp"><a href="javascript:void(0)" (click)="logout(e)" title="Sign out"><i class="fa fa-sign-out fa-18px" aria-hidden="true"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+</div>
+
+<div id="sidebar-wraper" [ngClass]="{'show-aside':show_aside===true}" >
+    <aside class="">
+        <ul>
+            <li><a [routerLink]="['/']" routerLinkActive="aactive" [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-home ico-normal"aria-hidden="true"></i> Home</a></li>
+            <li><a [routerLink]="['/trending']" routerLinkActive="aactive"><i class="fa fa-free-code-camp ico-normal" aria-hidden="true"></i>Trending</a></li>
+            <li><a [routerLink]="['/subscriptions']" routerLinkActive="aactive"><i class="fa fa-newspaper-o ico-normal" aria-hidden="true"></i>Subscriptions</a></li>
+            <li><a [routerLink]="['/history']" routerLinkActive="aactive"><i class="fa fa-history ico-normal" aria-hidden="true"></i>History</a></li>
+            <li><a [routerLink]="['/watchlater']" routerLinkActive="aactive"><i class="fa fa-clock-o ico-normal" aria-hidden="true"></i>Watch Later</a></li>
+        </ul>
+    </aside>
+</div>

@@ -1,0 +1,183 @@
+<div class="mid-content">
+    <div class="row" style="margin-right: 0px; margin-left: 0px;">
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-4 nopadding">
+                <a class="btn icon-btn btn-sm btn-success"   href="javascript:void(0);" (click)="add()">
+                    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+                    New
+                </a>
+        </div>
+        <div class="col-xl-offset-6 col-lg-offset-6 col-md-offset-6 col-sm-offset-6  col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-8 nopadding">
+                <div id="custom-search-input">
+                        <div class="input-group" style="left: 20px;">
+                            <input type="text" class="  search-query form-control" placeholder="Search" style="height: 28px;" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button">
+                                    <span class=" glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    <button (click)="validate_video()">Click me</button>
+    
+    <div class="block" *ngIf="isEditing">
+        <div class="content-left ">
+            <h4>Video Details </h4>
+        </div>
+        <div class="clearfix"></div>
+        <hr />
+  
+        <div class="row">
+          <div class="col-sm-12">
+              <form class="form-horizontal"  [formGroup]="Form" (ngSubmit)="onSubmit(Form.value)">
+                    <input formControlName="row_id" type="hidden" class="form-control"  />
+
+                  <div class="form-group">
+                      <label for="firstName" class="col-sm-2 control-label">Video Status</label>
+                      <div class="col-sm-4">
+                          <div class="switch-section">
+                              Un-publish<label class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" formControlName="publish_status" checked>
+                              <span class="custom-control-indicator"></span>
+                              </label> Publish
+                          </div>
+                      </div>
+                      
+                      <label for="channel" class="col-sm-2 control-label">Playlist</label>
+                      <div class="col-sm-4">
+                          <select id="channel" class="form-control"  formControlName="video_channel">
+                              <option *ngFor="let channel of channels" value="{{channel.channel_id}}">{{channel.channel_name}}</option>
+                          </select>
+                          <a [routerLink] = "['/dashboard/channel']" title="Create New Channel"> Create New Playlist?</a>
+                      </div>
+                  </div>
+                 
+                  <div class="form-group">
+                      <label for="firstName" class="col-sm-2 control-label">Video Title</label>
+                      <div class="col-sm-4">
+                          <input type="text" formControlName="video_title" class="form-control" placeholder="Video Title"  />
+                      </div>
+                      <label for="firstName" class="col-sm-2 control-label">Youtube Video ID</label>
+                      <div class="col-sm-4">
+                          <input type="text" formControlName="video_id" class="form-control" placeholder="Youtube Video ID"  />
+                      </div>
+                  </div> 
+                  
+                  <div class="form-group">
+                      <label for="firstName" class="col-sm-2 control-label">Video Duration</label>
+                      <div class="col-sm-10">
+                          <input type="text" formControlName="video_duration" class="form-control" placeholder="Video Duration HH:MM:SS"  />
+                      </div>
+                      
+                  </div>
+                  <div class="form-group">
+                      <label for="firstName" class="col-sm-2 control-label">Video Meta</label>
+                      <div class="col-sm-10">
+                              <textarea class="form-control" formControlName="video_meta" rows="3" placeholder="comma seprated tag,since this is important for search result"></textarea>
+                      </div>
+                     
+                  </div>
+                  <div class="form-group">
+                      <label for="firstName" class="col-sm-2 control-label">Video Description</label>
+                      <div class="col-sm-10">
+                              <textarea class="form-control" formControlName="video_description" rows="3" placeholder="Video Description within 1000 words"></textarea>
+                      </div>
+                      
+                  </div>
+                  <div class="form-group">
+                      <label for="firstName" class="col-sm-3 control-label"></label>
+                      <div class="col-sm-3">
+                            <a href="javascript:void(0)" (click)="cancelEditing()" *ngIf="isEditing" type="button" class="btn btn-outline-danger btn-block btn-sm">Cancel</a>  
+                      </div>
+                      <div class="col-sm-3">
+                              <button type="submit" [disabled]="!Form.valid"  class="btn btn-outline-success btn-block btn-sm">Save Video</button>      
+                      </div>
+                      <div class="col-sm-3"></div>
+                  </div>
+                      
+                               
+              </form>    
+          </div>
+        </div>    
+    </div>        
+    <div class="block" *ngIf="!isEditing">
+        <div class="content-left">
+            <h4>Videos List </h4>
+        </div>
+        <div class="content-right"> 
+            
+        </div>
+        <div class="clearfix"></div>
+        <div class="content-left">
+            <div class="all-action">
+                <label class="checkbox-bootstrap checkbox-glyphicons" >
+                    <input type="checkbox" >
+                    <span></span>
+                </label>
+                <select class="action-select">
+                    <option>ACTION</option>
+                    <option>DELETE</option>
+                    <option>PUBLISH</option>
+                    <option>UN-PUBLISH</option>
+                    <option>PUBLIC</option>
+                    <option>PRIVATE</option>
+                </select>
+            </div>
+        </div>
+        <div class="content-right"> 
+                <div class="all-action pull-right">
+                     <select class="action-select" style="float: right;">
+                        <option>Newest</option>
+                        <option>Published</option>
+                        <option>Un-published</option>
+                        <option>Public</option>
+                        <option>Private</option>
+                    </select>
+                </div>
+        </div>    
+        <div class="clearfix"></div>
+        <hr />
+        <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Video-ID</th>
+                <th style="width: 290px;">Title</th>
+                <th>Date</th>
+                <th>Publish Status</th>
+                <th style="width: 125px;">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let video of videos">
+                <th scope="row">
+                    <label class="checkbox-bootstrap checkbox-glyphicons" >
+                        <input type="checkbox" id="">
+                        <span></span>
+                    </label>
+                </th>
+                <td>{{video.video_id}}</td>
+                <td>{{video.video_title}}</td>
+                <td>{{video.video_date}}</td>
+                <td>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" checked *ngIf="video.publish_status == 1; else elsestatus">
+                        <ng-template #elsestatus>
+                            <input type="checkbox" class="custom-control-input" >
+                        </ng-template>
+                        <span class="custom-control-indicator"></span>
+                    </label>
+                </td>
+                <td>
+                    <div class="btn-group btn-group-xs" role="group" aria-label="Small button group">
+                        <a [routerLink]="['/dashboard/video-manager/view']" type="button" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                        <a href="javascript:void(0);" type="button" class="btn btn-success" (click)="edit(video)"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        <a type="button" class="btn btn-danger" (click)="delete(video)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>	
+</div>

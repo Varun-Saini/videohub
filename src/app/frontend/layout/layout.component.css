@@ -1,0 +1,95 @@
+.fa-18px{
+    font-size: 18px;
+}
+nav .badge {
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    line-height: 16px;
+    height: 16px;
+    padding: 0 5px;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+    border: 1px solid;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.08);
+  }
+nav .badge {
+    background: #fb2030;
+    border-color: #fb2030;
+    background-image: -webkit-linear-gradient(top, #fb2030, #fb2030);
+    background-image: -moz-linear-gradient(top, #fb2030, #fb2030);
+    background-image: -o-linear-gradient(top, #fb2030, #fb2030);
+    background-image: linear-gradient(to bottom, #fb2030, #fb2030);
+  }
+
+  .navbar-toggle{
+    top: 0px;
+    right: 0px;
+    padding: 4px;
+    position: absolute;
+    color: #fb2030;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    background-color: #fff;
+  }
+  .navbar-form{
+    width: 50%;
+  }
+  .hide-mobile{
+    display: inline-flex;
+  }
+  .hide-tablet{
+    display: inline-flex;
+  }
+  .hide-responsive{
+    display: inline-flex;
+  }
+  .hide-comp{
+    display: none;
+  }
+
+  /* Small devices (landscape phones, 576px and up)*/
+  @media screen and (max-width: 576px) and (min-width: 1px) {
+    .navbar-form{
+      width: 100%;
+    }
+    .nav>li {
+        position: relative;
+        display: inline-flex;
+    }
+    .hide-responsive{
+      display: none !important;
+    }
+    .hide-mobile{
+      display: none !important;
+    }
+    .hide-comp{
+      display: inline-flex !important;
+    }
+
+ }
+
+/* Medium devices (tablets, 768px and up)*/
+@media screen and (max-width: 1024px) and (min-width: 577px) {
+  .navbar-form{
+    width: 100%;
+  }
+  .nav>li {
+      position: relative;
+      display: inline-flex;
+  }
+  .hide-responsive{
+    display: none !important;
+  }
+  .hide-tablet{
+    display: none !important;
+  }
+  .hide-comp{
+    display: inline-flex!important;
+  }
+ }

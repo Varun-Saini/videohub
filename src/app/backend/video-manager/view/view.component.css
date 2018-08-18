@@ -1,0 +1,45 @@
+.btn-pink{
+    color: #fff;
+    background-color: #E91E63;
+    border-color: #E91E63;
+}
+.text-pink{
+    color:#E91E63;
+}
+.btn-prpl{
+    color: #fff;
+    background-color: #9f15dc;
+    border-color: #9f15dc;
+}
+.text-prpl{
+    color:#9f15dc;
+}
+.profle-img-circle{
+    height: 45px;
+    width: 45px;
+    padding: 1px;
+}
+.comment-text{
+    margin-left: 50px;
+    margin-top: -10px;
+
+}
+.comment-text a{
+    text-decoration:none;
+    padding-right:20px;
+}
+.liked{
+	color: #E91E63;
+}
+.disliked{
+	color: #B3AFAF;
+}
+.disliked:hover{
+	color: #E91E63;
+}
+.trash{
+    color: #B3AFAF;
+}
+.trash:hover{
+    color: #f00;
+}

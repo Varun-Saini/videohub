@@ -1,0 +1,45 @@
+<div class="mid-content">
+    <a class="btn icon-btn btn-sm btn-back"  [routerLink]="['/dashboard/channel']">
+            <span class="glyphicon btn-glyphicon glyphicon-arrow-left img-circle text-back"></span>
+            Back
+        </a>
+  <div class="block">
+      <div class="content-left ">
+          <h4>Channel Details </h4>
+      </div>
+      <div class="clearfix"></div>
+      <hr />
+
+      <div class="row">
+        <div class="col-sm-12">
+            <form class="form-horizontal"  [formGroup]="addForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="channel_name" class="col-sm-3 control-label">Channel Name</label>
+                    <div class="col-sm-6">
+                    
+                        <input formControlName="channel_name" type="text" id="channel_name" class="form-control" placeholder="Channel Name"  />
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div> 
+                <div class="form-group">
+                    <label for="channel_description" class="col-sm-3 control-label">Cahnnel Description</label>
+                    <div class="col-sm-6">
+                            <textarea formControlName="channel_description" class="form-control" id="channel_description" rows="3" placeholder="Video Description within 1000 words"></textarea>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-3 control-label"></label>
+                    <div class="col-sm-3">
+                            <a [routerLink]="['/dashboard/Channel']" type="button" class="btn btn-outline-danger btn-block btn-sm">Cancel Video</a>  
+                    </div>
+                    <div class="col-sm-3">
+                            <button type="submit" class="btn btn-outline-success btn-block btn-sm">Save Video</button>      
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>              
+            </form>    
+        </div>
+      </div>
+  </div>
+</div>

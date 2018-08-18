@@ -1,0 +1,116 @@
+<!--<input type="checkbox" [checked]="saveUsername" (change)="saveUsername = !saveUsername" />-->
+<div class="mid-content">
+        <div class="row" style="margin-right: 0px; margin-left: 0px;">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-4 nopadding">
+                    <a class="btn icon-btn btn-sm btn-success"  href="javascript:void(0);" (click)="add()">
+                        <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+                        New
+                    </a>
+            </div>
+            <div class="col-xl-offset-6 col-lg-offset-6 col-md-offset-6 col-sm-offset-6  col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-8 nopadding">
+                    <div id="custom-search-input">
+                            <div class="input-group" style="left: 20px;">
+                                <input type="text" class="  search-query form-control" placeholder="Search" style="height: 28px;" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+            </div>
+        </div>
+<div class="block" *ngIf="isEditing">
+    <div class="content-left ">
+        <h4>Playlist Details </h4>
+    </div>
+    <div class="clearfix"></div>
+    <hr />
+     <div class="row">
+        <div class="col-sm-12">
+            <form class="form-horizontal"  [formGroup]="Form" (ngSubmit)="onSubmit(Form.value)">
+                <div class="form-group">
+                    <label for="channel_name" class="col-sm-3 control-label">Playlist Name</label>
+                    <div class="col-sm-6">
+                        <input formControlName="channel_id" type="hidden" class="form-control"  />
+                        
+                        <input formControlName="channel_name" type="text" id="channel_name" class="form-control" placeholder="Playlist Name"  />
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div> 
+                <div class="form-group">
+                    <label for="channel_description" class="col-sm-3 control-label">Playlist Description</label>
+                    <div class="col-sm-6">
+                            <textarea formControlName="channel_description" class="form-control" id="channel_description" rows="3" placeholder="Playlist Description within 1000 words"></textarea>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-3 control-label"></label>
+                    <div class="col-sm-3">
+                            <a href="javascript:void(0)" (click)="cancelEditing()" *ngIf="isEditing" type="button" class="btn btn-outline-danger btn-block btn-sm">Cancel</a>  
+                    </div>
+                    <div class="col-sm-3">
+                            <button type="submit" [disabled]="!Form.valid" class="btn btn-outline-success btn-block btn-sm">Save Playlist</button>      
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>              
+            </form>    
+        </div>
+      </div>
+  </div>          
+        <p>&nbsp;</p>        
+        <div class="block" *ngIf="!isEditing">
+            <div class="content-left">
+                <h4>Play List </h4>
+            </div>
+            <div class="content-right"> 
+                
+            </div>
+            <div class="clearfix"></div>
+            <div class="content-left">
+                <div class="all-action">
+                    <label class="checkbox-bootstrap checkbox-glyphicons" >
+                        <input type="checkbox" >
+                        <span></span>
+                    </label> <span>SELECT ALL</span>
+                <a type="button" class="btn btn-danger btn-xs"  (click)="delete()"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+
+                </div>
+            </div>    
+            <div class="clearfix"></div>
+            <hr />
+            <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th style="width: 290px;">Title</th>
+                    <th>Total Videos</th>
+                    <th>Date</th>
+                    <th style="width: 125px;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let channel of channels">
+                    <th scope="row">
+                        <label class="checkbox-bootstrap checkbox-glyphicons" >
+                            <input type="checkbox" id="">
+                            <span></span>
+                        </label>
+                    </th>
+                    <td>{{channel.channel_name}}</td>
+                    <td>{{channel.channel_description}}</td>
+                    <td>{{channel.created_on}}</td>
+                    <td>
+                        <div class="btn-group btn-group-xs" role="group" aria-label="Small button group">
+                            <a [routerLink]="['/dashboard/playlist/view']" type="button" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                            <a href="javascript:void(0);" type="button" class="btn btn-success" (click)="edit(channel)"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                            <a type="button" class="btn btn-danger btn-xs"  (click)="delete(channel)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                        </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>	
+    </div>
+    

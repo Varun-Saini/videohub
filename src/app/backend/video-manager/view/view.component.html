@@ -1,0 +1,90 @@
+<div class="mid-content">
+    <a class="btn icon-btn btn-sm btn-back"  [routerLink]="['/dashboard/video-manager']">
+            <span class="glyphicon btn-glyphicon glyphicon-arrow-left img-circle text-back"></span>
+            Back
+        </a>
+  <div class="block">
+      <div class="content-left " style="width:100%;">
+          <h4>{{video.video_title}}</h4>
+      </div>
+      <div class="clearfix"></div>
+      <hr />
+
+      <div class="row">
+          
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">	
+              <div class="overlay">
+                  <a (click)="watchanothervideo(video.video_id)" href="javascript:void(0)"><img class="img-fluid thumbnail" src="http://img.youtube.com/vi/{{ video.video_id }}/0.jpg"></a>
+                  <span class="time">{{ video.video_duration }}</span>
+                  <a (click)="watchanothervideo(video.video_id)" href="javascript:void(0)" class="playWrapper"></a>
+              </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="col-sm-4 col-xs-4 nopadding">
+              <a class="btn icon-btn btn-sm btn-prpl">
+                <span class="glyphicon btn-glyphicon glyphicon-eye-open img-circle text-prpl"></span>
+                {{video.video_views}}
+              </a>
+            </div>
+            <div class="col-sm-4 col-xs-4 nopadding">
+              <a class="btn icon-btn btn-sm btn-success pull-right">
+                <i class="fa fa-comment btn-glyphicon img-circle text-success" area-hidden="true"></i>
+                {{video.video_likes}}
+              </a>
+            </div>
+            <div class="col-sm-4 col-xs-4 nopadding">
+                <a class="btn icon-btn btn-sm btn-pink pull-right">
+                  <span class="glyphicon btn-glyphicon glyphicon-heart img-circle text-pink"></span>
+                  {{video.video_likes}}
+                </a>
+            </div>
+            <div class="col-sm-12 col-xs-12 nopadding">
+              <strong>Youtube Video ID: {{video.video_id}} </strong>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <strong>Video Meta: </strong><p style="text-align:justify;">{{video.video_meta}}</p> 
+            </div> 
+             <div class="col-sm-12 col-xs-12">
+                  <strong>Video Description: </strong><p style="text-align:justify;">{{video.video_desc}}</p>
+            </div>
+
+
+          </div>
+          
+      </div>
+      
+      <div class="row">
+        
+        <div class="col-sm-12 col-xs-12"> <hr style="margin: 15px 0px;border-bottom: 2px solid #f8f8f8;">
+          <strong>Comments:</strong>
+          <div>
+              <a href="#" id="user-profile">
+                <img class="img-responsive img-thumbnail img-circle profle-img-circle" src="assets/img/profile2.jpg">
+                <strong>@username</strong>
+              </a>
+              <div class="comment-text">
+                <p>This is awesome man !!!!!!!!</p>
+                <a><i class="fa fa-heart fa-2x disliked" aria-hidden="true"></i></a>
+                <a><i class="fa fa-trash fa-2x trash" aria-hidden="true"></i></a>
+              </div>
+              
+          </div>
+          <div>
+              <a href="#" id="user-profile">
+                <img class="img-responsive img-thumbnail img-circle profle-img-circle" src="assets/img/profile2.jpg">
+                <strong>@username</strong>
+              </a>
+              <div class="comment-text">
+                <p>This is awesome man !!!!!!!!</p>
+                <a><i class="fa fa-heart fa-2x disliked" aria-hidden="true"></i></a>
+                <a><i class="fa fa-trash fa-2x trash" aria-hidden="true"></i></a>
+              </div>
+              
+          </div>
+        </div>
+      </div>
+      
+
+
+  </div>
+</div>
